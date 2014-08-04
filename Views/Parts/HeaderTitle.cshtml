@@ -1,0 +1,19 @@
+﻿@{
+    DeSjoerd.Competition.Theme.Widgets.Models.HeaderTitlePart headerTitle = Model.HeaderTitlePart;
+    var title = headerTitle.CurrentTitle != null ? headerTitle.CurrentTitle.Title : Layout.Title;
+    
+    var contentType = headerTitle.CurrentContentType;
+    if(contentType == null) {
+        contentType = string.Empty;
+    }
+}
+@if (title != null && contentType != null)
+{
+    <div class="header-title header-title-@contentType">
+        <div class="row">
+            <div class="columns large-12">
+                <h1>@title</h1>
+            </div>
+        </div>
+    </div>
+}
